@@ -26,24 +26,23 @@ if (tgfForm) {
     "Hány éves vagy?",
     "Mesélj magadról 5 mondatban.",
     "Miért szeretnél jelentkezni?",
-    "5. kérdés",
-    "6. kérdés",
-    "7. kérdés",
-    "8. kérdés"
+    "Voltál már korábban admin másik szerveren?",
+    "Mivel tudnád segíteni a csapatot?",
+    "Mennyire tudod jól kezelni a vitákat?",
+    "Miért pont téged válasszunk?"
   ];
   const choiceQuestions = [
-    ["9. kérdés", ["Első állítás", "Második állítás", "Harmadik állítás", "Negyedik állítás"]],
-    ["10. kérdés", ["Első állítás", "Második állítás", "Harmadik állítás", "Negyedik állítás"]],
-    ["11. kérdés", ["Első állítás", "Második állítás", "Harmadik állítás", "Negyedik állítás"]],
-    ["12. kérdés", ["Első állítás", "Második állítás", "Harmadik állítás", "Negyedik állítás"]],
-    ["13. kérdés", ["Első állítás", "Második állítás", "Harmadik állítás", "Negyedik állítás"]]
+    ["Belépsz egy hangcsatornába és azt hallod, hogy két ember egymással veszekszik. Mi a helyes cselekedet ebben a helyzetben?", ["A) Hagyod hogy folytassák", "B) Beleszólsz és te is elkezdesz veszekedni velük", "C) Leállítod őket és ha nem hagyják abba akkor le némítod őket", "D) Hívsz egy nagyobbat!"]],
+    ["Egy nem beszélgetésre való hangcsatornában el elkezdenek beszélgetni és ebből egy vita alakul ki. Mit tennél?", ["A) Hagyod, hogy beszélgessenek de a vitát megprópálod leállítani.", "B) Elmagyarázod nekik, hogy ez nem beszélgetésre van és le állítod őket", "Nem szólsz közbe hagyod, hogy folytassák", "C) Szólsz a szerver tulajnak!"]],
+    ["Kialakul egy vita a semmiből. Mit teszel?", ["A) Semmit", "B) Le némítod őket", "C) Ki bannolod őket", "D) Megbeszéled velük."]],
+    ["Valakit feltörnek és minden csatornába beküld egy vírust. Mit teszel?", ["A) Semmit", "B) Le némítod", "C) Bannolod", "D) Szólsz neki PM-ben, hogy feltörték és cseréljen jelszót."]],
   ];
 
   textQuestions.forEach((question, index) => {
     const section = document.createElement("section");
     section.className = "question-block";
     section.innerHTML = `
-      <span class="question-number">${String(index + 1).padStart(2, "0")} / 13</span>
+      <span class="question-number">${String(index + 1).padStart(2, "0")} / 12</span>
       <label for="q${index + 1}">${question}</label>
       <textarea id="q${index + 1}" name="q${index + 1}" required placeholder="${index >= 4 ? "Írd ide a válaszodat…" : "Írd ide a válaszodat…"}"></textarea>
     `;
@@ -79,7 +78,7 @@ if (tgfForm) {
     event.preventDefault();
     const data = new FormData(tgfForm);
     const answers = [];
-    for (let i = 1; i <= 13; i++) {
+    for (let i = 1; i <= 12; i++) {
       answers.push(data.get(`q${i}`));
     }
     const submissions = read(STORAGE.tgf);
@@ -120,7 +119,8 @@ if (loginForm) {
     "Bocika": "Bocika0211",
     "Barni": "Barni567",
     "Fanneszka": "Fanni567",
-    "Flori": "Flori567"
+    "Flori": "Flori567",
+    "Navi": "Navi567"
   };
 
   loginForm.addEventListener("submit", (event) => {
