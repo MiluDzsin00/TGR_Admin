@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGR - Csaló jelentése</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <a class="back-link" href="index.html">← Főoldal</a>
+  <main class="form-shell small-form">
+    <header class="form-header">
+      <p class="eyebrow">Bejelentés</p>
+      <h1>Csaló jelentése</h1>
+      <p>Írd le részletesen a történteket.</p>
+    </header>
+    <form id="reportForm" class="questions-form">
+      <section class="question-block">
+        <label for="reporterName">A te neved és Discord ID-d</label>
+        <textarea id="reporterName" required placeholder="Discord név és ID"></textarea>
+      </section>
+      <section class="question-block">
+        <label for="reportedName">A bejelentett személy neve és Discord ID-je</label>
+        <textarea id="reportedName" required placeholder="Discord név és ID"></textarea>
+      </section>
+      <section class="question-block">
+        <label for="reason">Indok részletesen</label>
+        <textarea id="reason" class="large-text" required placeholder="Fejtsd ki részletesen, miért szeretnéd bejelenteni…"></textarea>
+      </section>
+      <button class="submit-btn" type="submit">Bejelentés küldése <span>›</span></button>
+    </form>
+  </main>
+  <div class="toast" id="toast">A bejelentésed sikeresen elküldve.</div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGR - Admin Panel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <a class="back-link" href="index.html">← Főoldal</a>
+
+  <main class="admin-login" id="loginView">
+    <form class="login-card" id="loginForm">
+      <div class="lock-icon">◆</div>
+      <p class="eyebrow">Védett terület</p>
+      <h1>Admin belépés</h1>
+      <label>
+        <span>Felhasználónév</span>
+        <input id="username" type="text" autocomplete="username" required>
+      </label>
+      <label>
+        <span>Jelszó</span>
+        <input id="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p class="form-error" id="loginError"></p>
+      <button class="primary-btn" type="submit">Belépés</button>
+    </form>
+  </main>
+
+  <main class="dashboard hidden" id="dashboard">
+    <header class="dash-header">
+      <div>
+        <p class="eyebrow">Adminisztráció</p>
+        <h1>The Gun Range</h1>
+      </div>
+      <button class="ghost-btn" id="logoutBtn">Kilépés</button>
+    </header>
+    <div class="dashboard-tabs">
+      <button class="tab active" data-tab="tgf">TGF jelentkezések <span id="tgfCount">0</span></button>
+      <button class="tab" data-tab="reports">Csaló jelentések <span id="reportCount">0</span></button>
+    </div>
+    <section id="tgfPanel" class="admin-panel"></section>
+    <section id="reportsPanel" class="admin-panel hidden"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
